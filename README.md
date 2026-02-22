@@ -1,70 +1,83 @@
-# MemoryOS Server - HTTP API Service
+# memoryos-server
 
-<p align="center">
-  <strong>RESTful API server for MemoryOS - Deploy memory as a service</strong>
-</p>
+## Detailed Description
 
-HTTP API server providing MemoryOS functionality as a service. Part of the MemoryOS ecosystem.
+memoryos-server is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-## Features
+## Problem Statement
 
-- **RESTful API**: Full CRUD operations for memories
-- **Multiple Endpoints**: /memory, /context, /agent, /team, /shared, /skill
-- **Health Checks**: System health monitoring
-- **Easy Integration**: Any HTTP client can use it
+Describe the user or business problem this project solves, the target users, and expected outcomes.
 
-## Installation
+## Solution Overview
 
-```bash
-go install github.com/yksanjo/memoryos-server@latest
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
 ```
 
-## Quick Start
+## Getting Started
+
+### Prerequisites
+
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
 
 ```bash
-# Run server
-memoryos-server
-
-# Server starts on :8080
+go mod tidy
+go test ./...
+go vet ./...
 ```
 
-## API Endpoints
+## Usage
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/health` | GET | Health check |
-| `/memory` | POST | Store memory |
-| `/memory` | GET | Get memory |
-| `/memory` | DELETE | Delete memory |
-| `/memory/search` | GET | Search memories |
-| `/context` | GET | Get compressed context |
-| `/agent` | POST | Register agent |
-| `/team` | POST | Create team |
-| `/shared` | POST | Create shared value |
-| `/skill` | POST | Register skill |
-| `/stats` | GET | Get statistics |
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-## Example Usage
+## Quality Standards
 
-```bash
-# Store a memory
-curl -X POST http://localhost:8080/memory \
-  -H "Content-Type: application/json" \
-  -d '{"agent_id":"agent1","type":"episodic","content":"User question"}'
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-# Get context
-curl "http://localhost:8080/context?agent_id=agent1&max_tokens=2000"
+## Security
 
-# Search
-curl "http://localhost:8080/memory/search?agent_id=agent1&q=pricing"
-```
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-## Related Projects
+## Contributing
 
-- [memoryos](https://github.com/yksanjo/memoryos) - Full framework
-- [memoryos-engine](https://github.com/yksanjo/memoryos-engine) - Core library
-- [memoryos-cli](https://github.com/yksanjo/memoryos-cli) - CLI tool
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
+
+## Roadmap
+
+Track upcoming milestones, technical debt, and planned feature work.
+
+## Support
+
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
 ## License
 
-MIT
+This project is released under the MIT License.
