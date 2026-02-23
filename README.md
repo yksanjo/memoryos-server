@@ -1,5 +1,12 @@
 # memoryos-server
 
+Production-grade project scaffold focused on reliability, maintainability, and fast onboarding.
+
+[![CI](https://img.shields.io/github/actions/workflow/status/yksanjo/memoryos-server/ci.yml?branch=main&label=ci)](https://github.com/yksanjo/memoryos-server/actions)
+![License](https://img.shields.io/github/license/yksanjo/memoryos-server)
+![Last Commit](https://img.shields.io/github/last-commit/yksanjo/memoryos-server)
+![Repo Size](https://img.shields.io/github/repo-size/yksanjo/memoryos-server)
+
 ## Detailed Description
 
 memoryos-server is maintained as an industry-grade software project with production-ready engineering practices.  
